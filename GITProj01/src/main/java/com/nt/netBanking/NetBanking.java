@@ -18,4 +18,8 @@ public class NetBanking {
 	}
 	// Hi hello every one here HI
 
+	public String closeAcc()
+	{
+		return " close account ";
+	}
 }
