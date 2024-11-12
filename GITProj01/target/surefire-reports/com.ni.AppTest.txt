@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.ni.AppTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 s -- in com.ni.AppTest
+=======
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 s -- in com.ni.AppTest
+>>>>>>> branch 'master' of https://github.com/vprasadjadhavgmailcom/NTFS-TOOL903.git
