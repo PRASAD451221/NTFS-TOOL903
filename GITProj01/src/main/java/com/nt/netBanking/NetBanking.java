@@ -20,6 +20,6 @@ public class NetBanking {
 
 	public String closeAcc()
 	{
-		return " close account ";
+		return " close account";
 	}
 }
