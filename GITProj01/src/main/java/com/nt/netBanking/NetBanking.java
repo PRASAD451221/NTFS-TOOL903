@@ -16,6 +16,6 @@ public class NetBanking {
 	{
 		return amount+"is the diposte the amount to "+accno;
 	}
-	// Hi hello every one here
+	// Hi hello every one here HI
 
 }
