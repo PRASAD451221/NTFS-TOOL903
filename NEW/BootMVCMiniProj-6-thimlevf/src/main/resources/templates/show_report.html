@@ -71,6 +71,14 @@
     HOME&nbsp;
     <img th:src="@{/images/home.jpg}" width="200" height="150" alt="Home Icon">
   </a>
+  
+  <div th:if="${msg}" style="color: green; text-align: center; margin-bottom: 10px;">
+    <p th:text="${msg}"></p>
+</div>
+
+<div th:if="${error}" style="color: red; text-align: center; margin-bottom: 10px;">
+    <p th:text="${error}"></p>
+</div>
 </center>
   
   </center>

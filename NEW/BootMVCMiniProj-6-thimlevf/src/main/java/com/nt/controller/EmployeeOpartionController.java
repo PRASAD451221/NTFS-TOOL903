@@ -121,23 +121,17 @@ public class EmployeeOpartionController {
 	
 	
 	@PostMapping("/register")// for the storing the form page
-	public String RegisterEmployeeController(@ModelAttribute("emp") Employee emp,HttpSession attrs)
+	public String RegisterEmployeeController(@ModelAttribute("emp") Employee emp,RedirectAttributes attrs)
 	{
-		try
-		{
-			System.out.println("EmployeeOpartionController.RegisterEmployeeController()");
-			String msg = service.RegisterEmployee(emp);
-			
-			
-			attrs.setAttribute("msglist",msg);
-			
-			return"redirect:report";	
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-			attrs.setAttribute("erroemsg", e.getMessage());
-			return "error";
-		}
+		try {
+	        String msg = service.RegisterEmployee(emp);
+	        attrs.addFlashAttribute("msg", "Employee registered successfully: " + emp.getEmpname());
+	        return "redirect:report";
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        attrs.addFlashAttribute("error", "Failed to register employee: " + e.getMessage());
+	        return "redirect:report";
+	    }
 	
 	
 	
@@ -157,10 +151,15 @@ public class EmployeeOpartionController {
 	@PostMapping("/edit")
 	public String EditEmployeeDetails(RedirectAttributes attrs,@ModelAttribute("emp") Employee emp)
 	{
-		String msg = service.UpdateEmployee(emp);
-		attrs.addFlashAttribute("emplist", msg);
-		
-		return "redirect:report";
+		 try {
+		        String msg = service.UpdateEmployee(emp);
+		        attrs.addFlashAttribute("msg", "Employee updated successfully: " + emp.getEmpname());
+		        return "redirect:report";
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		        attrs.addFlashAttribute("error", "Failed to update employee: " + e.getMessage());
+		        return "redirect:report";
+		    }
 	}
 	
 	@GetMapping("/delete")
